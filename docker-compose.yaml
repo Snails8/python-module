@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: .
+    working_dir: '/root'
+    tty: true
+    restart: always
+    volumes:
+      - ./src/:/root/src
