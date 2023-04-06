@@ -4,13 +4,15 @@ from PyPDF2 import PdfReader, PdfWriter
 
 
 def compression_png():
-    directory = 'data/xxx/'
+    directory = 'data/img/'
     for filename in os.listdir(directory):
-        if filename.endswith('.png'):
+        # if filename.endswith('.png'):
             filepath = os.path.join(directory, filename)
+            print(f'run ${filename}')
             with Image.open(filepath) as im:
-                im.convert('RGBA').save(filepath, format='PNG', optimize=True)
-                # im.save(filepath, "PNG", optimize=True)
+                # im.convert('RGBA').save(filepath, format='PNG', optimize=True, quality = 10)
+                # https://imagingsolution.net/program/python/pillow/save_jpeg_image_quality/
+                im.save(filepath, quality = 10)
     
     
     return print('success')
@@ -33,5 +35,5 @@ def compression_pdf():
 
     return print('success')
 
+compression_png()
 # compression_pdf()
-compression_pdf()
