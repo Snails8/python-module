@@ -1,7 +1,9 @@
 from PIL import Image
 import os
 from PyPDF2 import PdfReader, PdfWriter
+import subprocess
 
+from compression.compress_pdf import compression_pdf
 
 def compression_png():
     directory = 'data/img/'
@@ -17,23 +19,26 @@ def compression_png():
     
     return print('success')
 
-def compression_pdf():
-    input_file = 'data/pdf/before.pdf'
-    output_file = 'data/result.pdf'
+# def compression_pdf():
+#     input_file = 'data/pdf/before.pdf'
+#     output_file = 'data/result.pdf'
     
-    with open(input_file, 'rb') as f:
-        pdf = PdfReader(f)
-        output_pdf = PdfWriter()
+#     with open(input_file, 'rb') as f:
+#         pdf = PdfReader(f)
+#         output_pdf = PdfWriter()
 
-        for i in range(len(pdf.pages)):
-            page = pdf.pages[i]
-            page.compress_content_streams()
-            output_pdf.add_page(page)
+#         for i in range(len(pdf.pages)):
+#             page = pdf.pages[i]
+#             page.compress_content_streams()
+#             output_pdf.add_page(page)
 
-        with open(output_file, 'wb') as output:
-            output_pdf.write(output)
+#         with open(output_file, 'wb') as output:
+#             output_pdf.write(output)
 
-    return print('success')
+#     return print('success')
 
-compression_png()
-# compression_pdf()
+
+
+
+# compression_png()
+compression_pdf()
