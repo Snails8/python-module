@@ -25,4 +25,4 @@ def compare_csv_files(file_a: str, file_b: str):
   df_diff.to_csv(OUTPUT_PATH)
   print('------------- compare done -----------------')
 
-compare_csv_files(FILE_A, FILE_B)
+# compare_csv_files(FILE_A, FILE_B)
