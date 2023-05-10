@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "compare-csv-files"
+version = "0.1.0"
+description = ""
+authors = ["Kaito Suzuki <snails8d@gmail.com>"]
+readme = "README.md"
+packages = [{include = "compare_csv_files"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
