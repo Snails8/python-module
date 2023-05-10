@@ -21,8 +21,6 @@ def compare_csv_files(file_a: str, file_b: str):
   
   selected_columns = ['code', 'name']
   df_diff = df_diff[selected_columns]
-
-  df_diff
   
   df_diff.to_csv(OUTPUT_PATH)
   print('------------- compare done -----------------')
