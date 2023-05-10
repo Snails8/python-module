@@ -18,6 +18,12 @@ def compare_csv_files(file_a: str, file_b: str):
   df_b = pd.read_csv(file_b)
   
   df_diff = df_b.merge(df_a, how='outer', indicator=True).loc[lambda x: x['_merge'] == 'left_only'].drop(columns=['_merge'])
+  
+  selected_columns = ['code', 'name']
+  df_diff = df_diff[selected_columns]
+
+  df_diff
+  
   df_diff.to_csv(OUTPUT_PATH)
   print('------------- compare done -----------------')
 
