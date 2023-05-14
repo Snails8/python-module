@@ -12,8 +12,9 @@ def get_increment_number(filename: str, idx: int, yyyymmdd: str | None):
   pattern = r'^IMG_20\d{6}_$'
   match = re.match(pattern, filename)
   
+  suffix =  f"{idx:06}"
   if match:
-    return match.group() + f"{idx:06}"
+    return match.group() + suffix
   else:
-    return "IMG_" + yyyymmdd + "_" + f"{idx:06}"
+    return "IMG_" + yyyymmdd + "_" + suffix
   
