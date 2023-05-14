@@ -1,8 +1,9 @@
 import os
-from src.domain.extract_number import get_file_number
-from src.domain.increment_number import get_increment_number
+from domain.extract_number import get_file_number
+from domain.increment_number import get_increment_number
 
-PATH = "../../../../Downloads/2023.3"
+DOWNLOAD_PATH = "../../../../Downloads/"
+PATH = DOWNLOAD_PATH + "ファイル"
 
 def rename_files_in_directory(directory_path: str):
   """directory_path: rootから見た相対パス ex) """
@@ -10,7 +11,7 @@ def rename_files_in_directory(directory_path: str):
   print('-------------- start rename filename -------------')
   filenames = os.listdir(directory_path)
   
-  for i, filename in filenames:
+  for i, filename in enumerate(filenames):
     old_path = os.path.join(directory_path, filename)
     
     # new_name = get_file_number(filename)
