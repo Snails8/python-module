@@ -1,5 +1,11 @@
 import pandas as pd
+from domain.count_column import main
 
-df = pd.read_csv('data/output.csv', dtype={'code': str})
+DOWNLOAD_FOLDER = "../../../../Downloads/"
+FILE_A =  DOWNLOAD_FOLDER + 'test.csv'
 
-print(df['code'])
+# df = pd.read_csv(FILE_A, dtype={'code': str})
+# print(df['code'])
+
+
+main(pd.read_csv(FILE_A))
