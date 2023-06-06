@@ -26,3 +26,4 @@ def compare_csv_files(file_a: str, file_b: str):
   print('------------- compare done -----------------')
 
 # compare_csv_files(FILE_A, FILE_B)
+
