@@ -9,6 +9,7 @@ packages = [{include = "compare_csv_files"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pandas = "^2.0.1"
+openpyxl = "^3.1.2"
 
 
 [build-system]
