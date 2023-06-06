@@ -27,3 +27,11 @@ def compare_csv_files(file_a: str, file_b: str):
 
 # compare_csv_files(FILE_A, FILE_B)
 
+
+def merge_df_add_columns(file_a: str, file_b: str):
+  df_a = pd.read_csv(file_a)
+  df_b = pd.read_csv(file_b)
+  
+  merged_df = pd.merge(df_a, df_b[['code', 'column1', 'column2']], on='code', how='left')
+
+merge_df_add_columns(FILE_A, FILE_B)
