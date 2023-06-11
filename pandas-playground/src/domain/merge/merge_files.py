@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
 DOWNLOAD_FOLDER = "../../../../Downloads/"
-FILE_A =  DOWNLOAD_FOLDER + 'test.xlsx'
+FILE_A =  DOWNLOAD_FOLDER + '202303ver05_fix_merge.xlsx'
 FILE_B = DOWNLOAD_FOLDER + 'sample.csv'
 
 OUTPUT_PATH = DOWNLOAD_FOLDER + 'result.csv'
@@ -41,3 +42,21 @@ def merge_df_add_columns(file_a: str, file_b: str):
 
 
 merge_df_add_columns(FILE_A, FILE_B)
+
+def get_filenames_in_directory(directory):
+    filenames = os.listdir(directory)
+    return filenames
+
+def check_codes_in_csv(file_list, csv_file):
+    # CSVファイルを読み込む
+    df = pd.read_csv(csv_file)
+
+    # ファイル名がcode列に含まれているか確認
+    for filename in file_list:
+        if filename in df['code'].values:
+            print(f"{filename} is in the CSV file.")
+        else:
+            print(f"{filename} is NOT in the CSV file.")
+            
+file_list = get_filenames_in_directory("../../../../Downloads/2023-3")
+check_codes_in_csv(file_list, "data/result.csv")
