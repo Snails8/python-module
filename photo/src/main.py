@@ -17,8 +17,7 @@ def rename_files_in_directory(directory_path: str):
     # new_name = get_file_number(filename)
     new_name = get_increment_number(filename, i, "20230429")
     
-    new_filename = new_name + '.jpg'
-    new_path = os.path.join(directory_path, new_filename)
+    new_path = os.path.join(directory_path, new_name)
     os.rename(old_path, new_path)
     
   print('-------------- finish rename filename -------------')

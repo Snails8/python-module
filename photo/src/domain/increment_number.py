@@ -14,7 +14,7 @@ def get_increment_number(filename: str, idx: int, yyyymmdd: str | None):
   
   suffix =  f"{idx:06}"
   if match:
-    return match.group() + suffix
+    return match.group() + suffix + '.jpg'
   else:
-    return "IMG_" + yyyymmdd + "_" + suffix
+    return "IMG_" + yyyymmdd + "_" + suffix + '.jpg'
   
