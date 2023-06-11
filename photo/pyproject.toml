@@ -8,6 +8,7 @@ packages = [{include = "rename_img_file"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pillow = "^9.5.0"
 
 
 [build-system]
