@@ -5,7 +5,11 @@ description = "Add your description here"
 authors = [
     { name = "Kaito Suzuki", email = "snails8d@gmail.com" }
 ]
-dependencies = []
+dependencies = [
+    "pandas>=2.2.2",
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.1",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
@@ -17,6 +21,8 @@ build-backend = "hatchling.build"
 managed = true
 dev-dependencies = [
     "ruff>=0.4.8",
+    "mypy>=1.10.0",
+    "pytest>=8.2.2",
 ]
 
 [tool.hatch.metadata]
