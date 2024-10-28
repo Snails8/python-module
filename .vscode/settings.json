@@ -1,6 +1,16 @@
 {
+  // "python.analysis.extraPaths": ["./app"],
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.formatOnSave": true
-  }
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit" // 保存時にimportを整理
+    }
+  },
+  // "mypy-type-checker.args": [
+  //   "--config=pyproject.toml"
+  // ],
+  // "ruff.format.args": [
+  //   "--config=pyproject.toml"
+  // ],
 }
