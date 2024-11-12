@@ -5,8 +5,15 @@
 
 # SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-TODAY=$(date +"%Y%m%d")
-WORK_DIR="src/work/$TODAY"
+DATE_TO_USE=$(date +"%Y%m%d")
+# -p オプションがあれば、その日付を使用
+while getopts "p:" opt; do
+    case $opt in
+        p) DATE_TO_USE=$OPTARG ;;
+    esac
+done
+
+WORK_DIR="src/work/$DATE_TO_USE"
 
 if [ ! -d "$WORK_DIR" ]; then
     echo "Creating new directory: $WORK_DIR"
