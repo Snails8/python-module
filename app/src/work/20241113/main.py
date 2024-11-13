@@ -6,7 +6,7 @@ input = "aaabbbcc"
 # output = "a3b3c2"
 
 
-def main(input):
+def encode(input):
     if not input:
         return ""
 
@@ -38,5 +38,26 @@ def main(input):
     return result
 
 
+def decode(input):
+    if not input:
+        return ""
+
+    if len(input) % 2 != 0:
+        return ""
+    
+    result = ""
+    for i in  range(0, len(input), 2):
+        current = input[i]
+        num = int(input[i+1])
+        result += current * num
+    
+    
+    return result
+    
+    
+
 if __name__ == "__main__":
-    print(main(input))
+    result_1 = encode(input)
+    print(result_1)
+    
+    print(decode(result_1))
